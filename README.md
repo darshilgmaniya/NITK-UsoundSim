@@ -149,7 +149,7 @@ From `python3 simulator/main.py`. Every value was measured by the code.
 NITK-UsoundSim/
 ├── README.md                  ← this file
 ├── requirements.txt
-├── demo.ipynb                 ← runs the whole pipeline team by team, with plots
+├── demo.ipynb                 ← ▶ RUN THIS: whole pipeline team by team, with plots
 ├── demo_colab.ipynb           ← same, for Google Colab (upload zip → Run all)
 │
 ├── simulator/                 ← integration
@@ -183,132 +183,53 @@ NITK-UsoundSim/
 
 ## 5. How to run
 
-| Way | Best for | Time (full run) |
+**Everyone runs one file: `demo.ipynb`.** It runs the whole pipeline step by step (T1 → T7), shows every team's output and plot, and ends with the final B-mode image.
+
+| Where | File | Time |
 |---|---|---|
-| [A. Google Colab](#a-google-colab-no-installation) | Quick demo, no installation | slower (free tier: 2 CPUs) |
-| [B. VS Code](#b-vs-code-on-your-computer) | Running and editing on your own computer | ≈8 min (`main.py`), ≈13 min (notebook) on an 8-core laptop |
-| [C. Just view the output](#c-just-view-the-output) | Showing results without running | instant |
+| [A. VS Code](#a-vs-code) | `demo.ipynb` | ≈13 min on an 8-core laptop |
+| [B. Google Colab](#b-google-colab) | `demo_colab.ipynb` (the same notebook, set up for Colab) | slower (free tier: 2 CPUs) |
+| [C. Only view the output](#c-only-view-the-output) | `results/demo.html` | instant |
 
-### A. Google Colab (no installation)
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/darshilgmaniya/NITK-UsoundSim/blob/main/demo_colab.ipynb)
-
-**Option 1: step-by-step notebook (recommended)**
-
-1. Click the **Open in Colab** badge above. It opens `demo_colab.ipynb` from this repository.
-2. Sign in with a Google account if Colab asks.
-3. Choose **Runtime → Run all**.
-   - If Colab warns that the notebook is not authored by Google, choose **Run anyway**.
-4. **Step 0** (the first code cell) downloads this repository into Colab (`git clone`) and moves into it. Nothing needs to be uploaded.
-5. The sections T1 → T7 then run in order. Each one prints its output (name, shape, units) and plots it.
-6. The **final B-mode image** appears in the last cell. It is also saved as `final_bmode_colab.png`; download it from the 📁 **Files** panel on the left (right-click → Download).
-
-> **Keep the tab open until the last cell finishes.** Colab's free tier has 2 CPUs, so the run takes considerably longer than the ≈13 min on an 8-core laptop.
-> If the runtime disconnects, the files are deleted. Run all cells again.
-
-**Option 2: run the scripts in a blank Colab notebook**
-
-Create a new notebook (**File → New notebook**) and run these cells one by one.
-
-```python
-# Cell 1: get the project
-!git clone --depth 1 https://github.com/darshilgmaniya/NITK-UsoundSim.git
-%cd NITK-UsoundSim
-```
-
-```python
-# Cell 2: full pipeline, all three phantoms (writes to results/)
-!python simulator/main.py
-```
-
-For a quick check that takes seconds, run `!python simulator/main.py point_targets` instead.
-
-```python
-# Cell 3: show the final image
-from IPython.display import Image, display
-display(Image("results/final_bmode.png"))
-```
-
-```python
-# Optional: tests
-!PYTHONPATH=simulator python teams/T5_RX_Beamforming/verify_beamformer.py
-!python tests/parameter_tests.py
-display(Image("results/parameter_tests.png"))
-```
-
-Colab already has numpy, scipy, matplotlib and OpenCV, so no `pip install` is needed.
-
-### B. VS Code (on your computer)
+### A. VS Code
 
 **1. Install (once)**
-- Python 3.10 or newer from [python.org](https://www.python.org/downloads/).
-- [VS Code](https://code.visualstudio.com/) with the **Python** and **Jupyter** extensions (Microsoft). Open the Extensions view with `Ctrl+Shift+X` (`Cmd+Shift+X` on Mac).
-- [Git](https://git-scm.com/downloads), which is only needed for cloning. Alternatively, use **Code → Download ZIP** on this page and unzip.
+- [Python 3.10+](https://www.python.org/downloads/)
+- [VS Code](https://code.visualstudio.com/) with the **Python** and **Jupyter** extensions (Microsoft)
 
-**2. Get the project and install the libraries.** Open a terminal and run:
+**2. Get the project.** Either use **Code → Download ZIP** on this page and unzip it, or clone it:
 ```bash
 git clone https://github.com/darshilgmaniya/NITK-UsoundSim.git
 ```
-```bash
-cd NITK-UsoundSim
-```
+
+**3. Install the libraries.** In VS Code, choose **File → Open Folder…** and open the project folder (the one containing `demo.ipynb`). Open a terminal with **Terminal → New Terminal** and run:
 ```bash
 python3 -m pip install -r requirements.txt
 ```
 On Windows, use `python` instead of `python3`.
 
-**3. Open the project folder in VS Code.** Use **File → Open Folder…** and choose `NITK-UsoundSim`, the folder that contains `simulator/` and `teams/`.
-- Always open this top folder, not a sub-folder. The settings in `.vscode/` point every script to `simulator/config.py`.
+**4. Run `demo.ipynb`.**
+1. Open `demo.ipynb`.
+2. Click **Select Kernel** (top right), then choose the Python you installed the libraries into.
+3. Click **Run All**.
 
-**4. Select the Python interpreter.** Press `Ctrl+Shift+P` (`Cmd+Shift+P` on Mac), run **Python: Select Interpreter**, and pick the Python you installed the libraries into.
+Each team's section runs in order and shows its output. The **final image** appears at the end.
 
-**5. Run.** Pick whichever of these three ways you prefer:
+> **`No module named 'cv2'`?** The notebook is using a different Python. Click the kernel name (top right), choose the Python from step 3, and click **Run All** again.
 
-| How | Steps | What you see |
-|---|---|---|
-| **Run and Debug panel** (easiest) | `Ctrl+Shift+D` (`Cmd+Shift+D`), choose a configuration from the drop-down, press ▶ | Output in the terminal, images in `results/` |
-| **Notebook, step by step** | Open `demo.ipynb` → **Select Kernel** (top right) → the same Python as in step 4 → **Run All** | Every team's output and plot, one after the other, ending with the final image |
-| **Terminal** | `` Ctrl+` `` opens a terminal in the project folder, then run the commands below | Output in the terminal, images in `results/` |
+### B. Google Colab
 
-The ready-made configurations in the Run and Debug panel are:
-1. **Simulator: point targets only** (~3 s)
-2. **Simulator: all 3 phantoms** (~8 min)
-3. **T5 beamformer tests** (4 tests, ~9 s)
-4. **Parameter tests** (9 checks, ~50 s)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/darshilgmaniya/NITK-UsoundSim/blob/main/demo_colab.ipynb)
 
-Terminal commands, run from the project folder:
-```bash
-python3 simulator/main.py point_targets
-```
-```bash
-python3 simulator/main.py
-```
-```bash
-python3 tests/parameter_tests.py
-```
-```bash
-PYTHONPATH=simulator python3 teams/T5_RX_Beamforming/verify_beamformer.py
-```
-On Windows (PowerShell), the T5 test is `$env:PYTHONPATH="simulator"; python teams/T5_RX_Beamforming/verify_beamformer.py`.
+1. Click **Open in Colab** above.
+2. Choose **Runtime → Run all**. If Colab warns that the notebook is not authored by Google, choose **Run anyway**.
+3. The first cell downloads the project automatically. The final image appears in the last cell.
 
-**6. See the output.** In the Explorer, open `results/`:
-- `final_bmode.png`: final images of all three phantoms
-- `cyst_lesion.png`, `point_targets.png`, `scatterers.png`: each phantom before and after post-processing
-- `parameter_tests.png`: parameter test plots
+Keep the tab open until the run finishes. If the runtime disconnects, run all cells again.
 
-**Troubleshooting**
+### C. Only view the output
 
-| Problem | Fix |
-|---|---|
-| `ModuleNotFoundError: No module named 'cv2'` (or `scipy`) | The selected interpreter or kernel is a different Python. Repeat step 4, or pick the kernel again in the notebook, or run `python3 -m pip install -r requirements.txt` for that Python. |
-| `ModuleNotFoundError: No module named 'config'` | The folder opened in VS Code is not the project root (step 3), or `PYTHONPATH=simulator` is missing for the T5 test. |
-| The notebook cannot find the project | Open `demo.ipynb` from inside the project folder. It searches upward for `simulator/config.py`. |
-| The full run looks stuck | It is not stuck. The RF simulation of 96,000 scatterers takes a few minutes per phantom and prints when each one finishes. |
-
-### C. Just view the output
-
-- Download [`results/demo.html`](results/demo.html) and open it in any browser. It is the executed notebook with every stage's output and image.
-- Or browse the images in [`results/`](results) and [`docs/images/`](docs/images) directly on GitHub.
+Download [`results/demo.html`](results/demo.html) and open it in any browser. It is the already-executed notebook, with every stage's output and image.
 
 ---
 
