@@ -14,6 +14,19 @@ Probe: **Philips L12-4 (FUS4103) reference model**: 128-element linear array, 0.
 
 ---
 
+## Project flow
+
+**📄 [Open the full project-flow PDF (6 pages)](docs/NITK-UsoundSim_Project_Flow.pdf)**. It covers the data-flow diagram, the handover table (what each team receives and gives), how the project was built, the results, and the differences from the plan.
+
+<p align="center">
+  <a href="docs/NITK-UsoundSim_Project_Flow.pdf"><img src="docs/images/project_flow_pdf.png" width="640" alt="Data flow between teams (page 2 of the project-flow PDF)"></a>
+  <br><em>Page 2 of the PDF: which team's output becomes which team's input, with array shapes and units.</em>
+</p>
+
+> **Team numbering:** this chart follows our team split: **T6 = Image Reconstruction & Post-Processing** (envelope, log compression, despeckling) and **T7 = B-mode Image Formation** (gray image). The code folders keep the original plan numbering: `teams/T6_B_mode` and `teams/T7_Image_Recon_Post_Processing`.
+
+---
+
 ## Contents
 1. [Pipeline at a glance](#1-pipeline-at-a-glance)
 2. [Stage by stage: input → process → output](#2-stage-by-stage-input--process--output)
