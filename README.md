@@ -194,7 +194,9 @@ NITK-UsoundSim/
 ### A. VS Code
 
 **1. Install (once)**
-- [Python 3.10+](https://www.python.org/downloads/)
+- **Python 3.12** (recommended): [download Python 3.12](https://www.python.org/downloads/release/python-3124/). The project was developed and tested on **Python 3.12.4**, so use 3.12 if you can.
+  - On Windows, tick **"Add python.exe to PATH"** in the installer.
+  - If you already have several Pythons, install the libraries into 3.12 and pick 3.12 as the kernel (step 4).
 - [VS Code](https://code.visualstudio.com/) with the **Python** and **Jupyter** extensions (Microsoft)
 
 **2. Get the project.** Either use **Code → Download ZIP** on this page and unzip it, or clone it:
@@ -206,11 +208,13 @@ git clone https://github.com/darshilgmaniya/NITK-UsoundSim.git
 ```bash
 python3 -m pip install -r requirements.txt
 ```
-On Windows, use `python` instead of `python3`.
+On Windows, use `py -3.12 -m pip install -r requirements.txt`. On Mac or Linux, if `python3` is not 3.12, use `python3.12 -m pip install -r requirements.txt`.
+
+<sub>Tested versions: Python 3.12.4, numpy 1.26.4, scipy 1.16.0, matplotlib 3.8.3, opencv-python 4.9.0.</sub>
 
 **4. Run `demo.ipynb`.**
 1. Open `demo.ipynb`.
-2. Click **Select Kernel** (top right), then choose the Python you installed the libraries into.
+2. Click **Select Kernel** (top right) → **Python Environments** → choose **Python 3.12**, the one you installed the libraries into.
 3. Click **Run All**.
 
 Each team's section runs in order and shows its output. The **final image** appears at the end.
