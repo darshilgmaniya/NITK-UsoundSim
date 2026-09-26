@@ -1,6 +1,7 @@
 {
-    // Python 3.12.4 with numpy/scipy/matplotlib/opencv/scikit-image installed.
-    // (The Anaconda install on this Mac is an Intel build and does not run on the M2.)
+    // Default interpreter on the original Mac (Python 3.12.4 with the project's libraries).
+    // On another computer VS Code ignores it if missing: pick your own Python with
+    // "Python: Select Interpreter" (see README, section 5).
     "python.defaultInterpreterPath": "/usr/local/bin/python3",
 
     // Run files from the project root, and let every module find config.py
@@ -9,6 +10,12 @@
     "python.terminal.executeInFileDir": false,
     "terminal.integrated.cwd": "${workspaceFolder}",
     "terminal.integrated.env.osx": {
+        "PYTHONPATH": "${workspaceFolder}/simulator"
+    },
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}/simulator"
+    },
+    "terminal.integrated.env.windows": {
         "PYTHONPATH": "${workspaceFolder}/simulator"
     },
 

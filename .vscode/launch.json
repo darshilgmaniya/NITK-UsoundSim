@@ -3,7 +3,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "1. Simulator: point targets only (~1 s)",
+            "name": "1. Simulator: point targets only (~3 s)",
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/simulator/main.py",
@@ -13,7 +13,7 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "2. Simulator: all 3 phantoms (~95 s)",
+            "name": "2. Simulator: all 3 phantoms (~8 min)",
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/simulator/main.py",
@@ -22,7 +22,7 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "3. T5 beamformer tests (4 tests, ~1 s)",
+            "name": "3. T5 beamformer tests (4 tests, ~9 s)",
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/teams/T5_RX_Beamforming/verify_beamformer.py",
@@ -31,7 +31,7 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "4. Parameter tests (9 checks, ~16 s)",
+            "name": "4. Parameter tests (9 checks, ~50 s)",
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/tests/parameter_tests.py",
