@@ -11,7 +11,7 @@ simulator: phantom in, B-mode image out.
 - **Final deadline:** 26 September 2026 (final demo/submission)
 - **This document's purpose:** ground truth on what each team actually delivered
   (not what the plan assumed), the pipeline architecture, and the known
-  integration issues — written so Claude Code can pick this project up with
+  integration issues — written so anyone can pick this project up with
   full context instead of guessing from the plan doc alone.
 
 **Status (26 Sep): complete pipeline built and verified, now with the Philips L12-4 probe.** From the project root:

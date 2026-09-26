@@ -10,7 +10,7 @@ Small end-to-end demo of the Phase-1 acoustic propagation pipeline:
 run on the three synthetic PHANTOM_POINTS scatterers from config.py.
 Saves two PNG figures illustrating every stage of the pipeline.
 
-Run with (from /home/claude, so the package is importable):
+Run with (from the usound_sim folder, so the package is importable):
     python -m nitk_usoundsim.demo_acoustic_propagation
 """
 

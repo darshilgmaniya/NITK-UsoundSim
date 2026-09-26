@@ -19,7 +19,7 @@ Basic unit tests for the Phase-1 Acoustic Propagation module
   - multiple-scatterer linear superposition
 
 Run with:  python -m unittest nitk_usoundsim.test_acoustic_propagation -v
-(from /home/claude, so the `nitk_usoundsim` package is importable).
+(from the usound_sim folder, so the `nitk_usoundsim` package is importable).
 """
 
 import unittest
