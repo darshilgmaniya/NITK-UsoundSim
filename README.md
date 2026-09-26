@@ -26,17 +26,7 @@ Probe: **Philips L12-4 (FUS4103) reference model**: 128-element linear array, 0.
 
 ## 1. Pipeline at a glance
 
-```mermaid
-flowchart LR
-    CFG[/"config.py<br/>probe · medium · axes"/] --> T1
-    T1["T1 Transducer<br/>element_positions (128,)"] --> T2
-    T2["T2 TX Beamforming<br/>pulse · tx_delays (128,)"] --> T3
-    T3["T3 Acoustic Propagation<br/>incident wave · echoes"] <--> T4
-    T4["T4 Tissue Interaction<br/>phantom → raw_rf (128, 3574)"] --> T5
-    T5["T5 RX Beamforming (DAS)<br/>beamformed_rf (3118, 256)"] --> T6
-    T6["T6 B-mode Formation<br/>envelope + log → bmode (3118, 256)"] --> T7
-    T7["T7 Recon & Post-Processing<br/>scan conversion + guided filter"] --> IMG[("Final image<br/>512 × 256 px")]
-```
+<p align="center"><img src="docs/images/pipeline_flow.png" width="640" alt="Pipeline flow: config, T1 to T7, final image"></p>
 
 | # | Team | Receives (input) | Produces (output) | Shape / units |
 |---|---|---|---|---|
