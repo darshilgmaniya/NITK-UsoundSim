@@ -1,0 +1,43 @@
+{
+    // Run and Debug panel (Cmd+Shift+D): pick one of these and press the green ▶.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "1. Simulator: point targets only (~1 s)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/simulator/main.py",
+            "args": ["point_targets"],
+            "cwd": "${workspaceFolder}",
+            "env": { "PYTHONPATH": "${workspaceFolder}/simulator" },
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "2. Simulator: all 3 phantoms (~95 s)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/simulator/main.py",
+            "cwd": "${workspaceFolder}",
+            "env": { "PYTHONPATH": "${workspaceFolder}/simulator" },
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "3. T5 beamformer tests (4 tests, ~1 s)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/teams/T5_RX_Beamforming/verify_beamformer.py",
+            "cwd": "${workspaceFolder}",
+            "env": { "PYTHONPATH": "${workspaceFolder}/simulator" },
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "4. Parameter tests (9 checks, ~16 s)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tests/parameter_tests.py",
+            "cwd": "${workspaceFolder}",
+            "env": { "PYTHONPATH": "${workspaceFolder}/simulator" },
+            "console": "integratedTerminal"
+        }
+    ]
+}

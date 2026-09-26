@@ -1,0 +1,10 @@
+# Python / Jupyter caches
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# Large regenerable simulation arrays (re-created by simulator/main.py)
+results/*.npz
+results/*.npy

@@ -1,0 +1,28 @@
+{
+    // Python 3.12.4 with numpy/scipy/matplotlib/opencv/scikit-image installed.
+    // (The Anaconda install on this Mac is an Intel build and does not run on the M2.)
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+
+    // Run files from the project root, and let every module find config.py
+    // (in simulator/), so "Run Python File" also works for
+    // teams/T5_RX_Beamforming/verify_beamformer.py.
+    "python.terminal.executeInFileDir": false,
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    "terminal.integrated.env.osx": {
+        "PYTHONPATH": "${workspaceFolder}/simulator"
+    },
+
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.DS_Store": true
+    },
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+
+    // Hide the Pythons that lack the project's libraries (no cv2/scipy), so a
+    // notebook cannot pick them: macOS system 3.9.6 and Homebrew 3.14.
+    "jupyter.kernels.excludePythonEnvironments": [
+        "/usr/bin/python3",
+        "/opt/homebrew/bin/python3",
+        "/opt/homebrew/bin/python3.14"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+  "probe": "Philips L12-4 reference model",
+  "n_elements": 128,
+  "pitch_m": 0.0003,
+  "center_frequency_hz": 8000000.0,
+  "focus_x_m": 0.0,
+  "focus_z_m": 0.04,
+  "steering_angle_deg": 0.0,
+  "sound_speed_m_s": 1540.0,
+  "delay_min_s": 0.0,
+  "delay_max_s": 2.7950482224488857e-06,
+  "delay_max_us": 2.7950482224488855
+}
