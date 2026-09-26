@@ -7,6 +7,10 @@ Probe: **Philips L12-4 (FUS4103) reference model**: 128-element linear array, 0.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/darshilgmaniya/NITK-UsoundSim/blob/main/demo_colab.ipynb)
 
+> 📘 **Documents for every team:**
+> **[Theory Guide (PDF)](docs/NITK-UsoundSim_Theory_Guide.pdf)**: the physics and signal processing behind each team's task, in simple language, with equations and worked examples ·
+> **[Project Flow (PDF)](docs/NITK-UsoundSim_Project_Flow.pdf)**: which team's output becomes which team's input
+
 <p align="center">
   <img src="results/final_bmode.png" width="620" alt="Final B-mode images of the three phantoms">
   <br><em>Final output: point targets, speckle, and an anechoic cyst (50 dB dynamic range, guided-filter despeckling).</em>
@@ -185,6 +189,8 @@ NITK-UsoundSim/
 │   ├── MODULES.md             ← per-module documentation (inputs, outputs, equations, tests)
 │   ├── README.md              ← detailed development log and design decisions
 │   ├── NITK-UsoundSim_Project_Flow.pdf   ← input → output handover flow
+│   ├── NITK-UsoundSim_Theory_Guide.pdf   ← theory of every team's task, simple language
+│   ├── source/                ← scripts that build the Theory Guide and its figures
 │   └── images/                ← stage figures used in this README
 │
 └── results/                   ← final images (.png) and demo.html
@@ -288,6 +294,7 @@ Parameter test highlights:
 
 | Document | Content |
 |---|---|
+| [`docs/NITK-UsoundSim_Theory_Guide.pdf`](docs/NITK-UsoundSim_Theory_Guide.pdf) | Theory behind every team's stage in simple language: basics, equations used in the code, worked examples with our numbers, check-yourself questions, glossary, formula sheet |
 | [`docs/MODULES.md`](docs/MODULES.md) | For each module: explanation, inputs, outputs, equations, algorithm, assumptions, limitations, test result |
 | [`docs/NITK-UsoundSim_Project_Flow.pdf`](docs/NITK-UsoundSim_Project_Flow.pdf) | Visual flow of which output becomes which team's input |
 | [`docs/README.md`](docs/README.md) | Full development log: design decisions, bugs found and fixed, probe update (64 → 128 elements) |
