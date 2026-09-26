@@ -38,7 +38,7 @@ ROOT = HERE.parents[1]
 FIG = HERE / "fig"
 IMG = ROOT / "docs" / "images"
 RES = ROOT / "results"
-OUT = ROOT / "docs" / "NITK-UsoundSim_Theory_Guide.pdf"
+OUT = ROOT / "NITK-UsoundSim_Theory_Guide.pdf"
 
 # ---------------------------------------------------------------- fonts and colours
 _ttf = Path(matplotlib.get_data_path()) / "fonts" / "ttf"
