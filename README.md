@@ -181,7 +181,7 @@ NITK-UsoundSim/
 │   ├── T3_Acoustic_Propagation/usound_sim/nitk_usoundsim/   propagation engine (+ own tests)
 │   ├── T4_Tissue_Interaction/             tissue_interaction.py, phantom.py, tissue_phantoms.py
 │   ├── T5_RX_Beamforming/                 receive_beamforming.py, verify_beamformer.py, mock_data.py
-│   ├── T6_B_mode/                         bmode_formation.py (+ real carotid notebook)
+│   ├── T6_B_mode/                         bmode_formation.py (+ carotid notebook, now also simulated cyst lesion + point targets)
 │   └── T7_Image_Recon_Post_Processing/    post_processing.py (+ post-processing notebook)
 │
 ├── tests/
